@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear perfil de usuario</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body {
             background-color: #f7f7f7;
@@ -43,14 +44,14 @@
 <body>
 <div class="container">
     <h1>Crear perfil de usuario</h1>
-    <form action="/userprofile" method="post">
+    <form action="/userprofile" method="post" onsubmit="return validateForm()">
         <div class="form-group">
             <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" class="input">
         </div>
         <div class="form-group">
             <label for="lastName">Apellido:</label>
-            <input type="text" id="lastName" name="lastName" class="input">
+            <input type="text" id="lastName" name="lastName" class="input" >
         </div>
         <div class="form-group">
             <label for="email">Correo electrónico:</label>
@@ -71,5 +72,73 @@
         <button type="submit">Crear perfil</button>
     </form>
 </div>
+
+<script>
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var lastName = document.getElementById("lastName").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var city = document.getElementById("city").value;
+        var country = document.getElementById("country").value;
+
+        if (name === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingresa tu nombre'
+            });
+            return false;
+        }
+
+        if (lastName === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingresa tu apellido'
+            });
+            return false;
+        }
+
+        if (email === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingresa tu correo electrónico'
+            });
+            return false;
+        }
+
+        if (phone === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingresa tu teléfono'
+            });
+            return false;
+        }
+
+        if (city === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingresa tu ciudad'
+            });
+            return false;
+        }
+
+        if (country === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingresa tu país'
+            });
+            return false;
+        }
+
+        // Si todos los campos están completos, retorna true para enviar el formulario
+        return true;
+    }
+</script>
 </body>
 </html>
