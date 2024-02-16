@@ -4,60 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver todos los perfiles</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f2f2f2;
-            color: #333;
-        }
-
-        tbody tr:hover {
-            background-color: #f2f2f2;
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/allProfiles.css">
 </head>
 <body>
-<h1>Lista de todos los perfiles de usuario</h1>
+<h1><i class="fas fa-users icon"></i> Perfiles</h1>
 <table>
     <thead>
     <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Correo electrónico</th>
-        <th>Teléfono</th>
-        <th>Ciudad</th>
-        <th>País</th>
+        <th><i class="fas fa-user icon"></i> Nombre</th>
+        <th><i class="fas fa-user icon"></i> Apellido</th>
+        <th><i class="fas fa-envelope icon"></i> Correo electrónico</th>
+        <th><i class="fas fa-phone icon"></i> Teléfono</th>
+        <th><i class="fas fa-city icon"></i> Ciudad</th>
+        <th><i class="fas fa-globe icon"></i> País</th>
     </tr>
     </thead>
     <tbody>
@@ -72,5 +32,8 @@
     </tr>
     </tbody>
 </table>
+<div class="button-container">
+    <a href="/" class="button"><i class="fas fa-home"></i> Volver al inicio</a>
+</div>
 </body>
 </html>
