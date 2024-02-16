@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver todos los perfiles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        tbody tr:hover {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+<h1>Lista de todos los perfiles de usuario</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo electrónico</th>
+        <th>Teléfono</th>
+        <th>Ciudad</th>
+        <th>País</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterar sobre los perfiles y mostrar cada uno en una fila de la tabla -->
+    <tr th:each="profile : ${profiles}">
+        <td th:text="${profile.name}"></td>
+        <td th:text="${profile.lastName}"></td>
+        <td th:text="${profile.email}"></td>
+        <td th:text="${profile.phone}"></td>
+        <td th:text="${profile.city}"></td>
+        <td th:text="${profile.country}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

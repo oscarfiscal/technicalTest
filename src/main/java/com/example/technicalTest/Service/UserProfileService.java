@@ -19,4 +19,8 @@ public class UserProfileService {
         restTemplate.postForObject(apiUrl, userProfile, UserProfile.class);
     }
 
+    public UserProfile[] getAllUserProfiles() {
+        return restTemplate.getForObject(apiUrl, UserProfile[].class);
+    }
+
 }
