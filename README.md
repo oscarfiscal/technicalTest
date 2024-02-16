@@ -40,3 +40,6 @@ Esta es una aplicación Java Spring Boot que permite enviar datos a una API exte
 
 3. Una vez enviado, podrás ver el registro guardado en la página de detalles y también acceder a todos los registros mediante el enlace correspondiente.
 
+## Video de funcionamiento
+https://www.youtube.com/watch?v=beQs4jcyk_o
+
