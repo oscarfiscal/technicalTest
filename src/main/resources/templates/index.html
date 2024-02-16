@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear perfil de usuario</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Crear perfil</h1>
+    <form action="#" th:action="@{/userprofile}" th:object="${userProfile}" method="post" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="name" class="label">Nombre:</label>
+            <input type="text" th:field="*{name}" id="name" name="name" class="input">
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="label">Apellido:</label>
+            <input type="text" th:field="*{lastName}"  id="lastName" name="lastName" class="input" >
+        </div>
+        <div class="form-group">
+            <label for="email" class="label">Correo electrónico:</label>
+            <input type="email" th:field="*{email}" id="email" name="email" class="input">
+        </div>
+        <div class="form-group">
+            <label for="phone" class="label">Teléfono:</label>
+            <input type="text" th:field="*{phone}" id="phone" name="phone" class="input">
+        </div>
+        <div class="form-group">
+            <label for="city" class="label">Ciudad:</label>
+            <input type="text" th:field="*{city}" id="city" name="city" class="input">
+        </div>
+        <div class="form-group">
+            <label for="country" class="label">País:</label>
+            <input type="text" th:field="*{country}" id="country" name="country" class="input">
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+            <button type="submit" class="button button-icon"><i class="fas fa-user-plus"></i>Crear perfil</button>
+            <button type="button" onclick="window.location.href='/viewAllProfiles'" class="button-secondary button-icon"><i class="fas fa-list"></i>Ver todos los perfiles</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var lastName = document.getElementById("lastName").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var city = document.getElementById("city").value;
+        var country = document.getElementById("country").value;
+
+        if (name === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingresa tu nombre'
+            });
+            return false;
+        }
+
+        if (lastName === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingresa tu apellido'
+            });
+            return false;
+        }
+
+        if (email === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingresa tu correo electrónico'
+            });
+            return false;
+        }
+
+        if (phone === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingresa tu teléfono'
+            });
+            return false;
+        }
+
+        if (city === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingresa tu ciudad'
+            });
+            return false;
+        }
+
+        if (country === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor, ingresa tu país'
+            });
+            return false;
+        }
+
+        // Si todos los campos están completos, retorna true para enviar el formulario
+        return true;
+    }
+</script>
+</body>
+</html>

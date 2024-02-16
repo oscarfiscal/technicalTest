@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Perfil</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/profileInfo.css">
+</head>
+<body>
+<div class="container">
+    <h1><i class="fas fa-user"></i> Información del Perfil</h1>
+    <p><i class="fas fa-user"></i> Nombre: <span th:text="${userProfile.name}"></span></p>
+    <p><i class="fas fa-user"></i> Apellido: <span th:text="${userProfile.lastName}"></span></p>
+    <p><i class="fas fa-envelope"></i> Correo electrónico: <span th:text="${userProfile.email}"></span></p>
+    <p><i class="fas fa-phone"></i> Teléfono: <span th:text="${userProfile.phone}"></span></p>
+    <p><i class="fas fa-city"></i> Ciudad: <span th:text="${userProfile.city}"></span></p>
+    <p><i class="fas fa-globe"></i> País: <span th:text="${userProfile.country}"></span></p>
+    <div class="button-container">
+        <a href="/" class="button"><i class="fas fa-home"></i> Volver al inicio</a>
+    </div>
+</div>
+</body>
+</html>
