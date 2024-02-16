@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,30 +44,30 @@
 <body>
 <div class="container">
     <h1>Crear perfil de usuario</h1>
-    <form action="/userprofile" method="post" onsubmit="return validateForm()">
+    <form action="#" th:action="@{/userprofile}" th:object="${userProfile}" method="post" onsubmit="return validateForm()">
         <div class="form-group">
             <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" class="input">
+            <input type="text"  th:field="*{name}" id="name" name="name" class="input">
         </div>
         <div class="form-group">
             <label for="lastName">Apellido:</label>
-            <input type="text" id="lastName" name="lastName" class="input" >
+            <input type="text" th:field="*{lastName}"  id="lastName" name="lastName" class="input" >
         </div>
         <div class="form-group">
             <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" class="input">
+            <input type="email" th:field="*{email}" id="email" name="email" class="input">
         </div>
         <div class="form-group">
             <label for="phone">Teléfono:</label>
-            <input type="text" id="phone" name="phone" class="input">
+            <input type="text" th:field="*{phone}" id="phone" name="phone" class="input">
         </div>
         <div class="form-group">
             <label for="city">Ciudad:</label>
-            <input type="text" id="city" name="city" class="input">
+            <input type="text" th:field="*{city}" id="city" name="city" class="input">
         </div>
         <div class="form-group">
             <label for="country">País:</label>
-            <input type="text" id="country" name="country" class="input">
+            <input type="text" th:field="*{country}" id="country" name="country" class="input">
         </div>
         <button type="submit">Crear perfil</button>
     </form>
