@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Perfil de Usuario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        span {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Información del Perfil de Usuario</h1>
+    <p>Nombre: <span th:text="${userProfile.name}"></span></p>
+    <p>Apellido: <span th:text="${userProfile.lastName}"></span></p>
+    <p>Correo electrónico: <span th:text="${userProfile.email}"></span></p>
+    <p>Teléfono: <span th:text="${userProfile.phone}"></span></p>
+    <p>Ciudad: <span th:text="${userProfile.city}"></span></p>
+    <p>País: <span th:text="${userProfile.country}"></span></p>
+</div>
+</body>
+</html>
